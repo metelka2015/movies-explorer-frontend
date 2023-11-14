@@ -1,0 +1,118 @@
+.navigation {
+    display: none;
+    width: 520px;
+    background-color: #202020;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navigation__open {
+    display: flex;
+}
+
+
+.navigation__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+    margin-top: 159px;
+    gap: 30px;
+    
+}
+
+.navigation__link {
+    text-decoration: none;
+    color: white;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px; 
+    transition: .3s;
+}
+
+.navigation__link:hover {
+    opacity: .7;
+}
+
+.navigation__link_active {
+    padding-bottom: 5px;
+    border-bottom: 2px #fff solid;
+}
+
+.navigation__profile-link {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 12px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+    gap: 7px;
+    cursor: pointer;
+    padding-left: 10px;
+    
+}
+.navigation__profile-link:hover {
+    opacity: .7;
+}
+
+.navigation__account {
+    width: 12px;
+    height: 12px;
+    padding: 7px;
+    border-radius: 50px;
+    background-color: #313131;
+ }
+
+.navigation__account-button {
+    margin: 0 auto 93px;
+}
+
+.navigation__close-button {
+    position: absolute;
+    background-image: url(../../images/button-close.svg);
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    cursor: pointer;
+    right: 24px;
+    top: 24px;
+    border: none;
+    padding: 0;
+    transition: opacity 0.3s linear;
+}
+
+.navigation__close-button:hover {
+    opacity: .7;
+  }
+  
+  @media screen and (max-width: 520px) {
+    .navigation {
+        width: 320px;
+    }
+
+    .navigation__container {
+        margin-top: 144px;
+        gap: 25px;
+    }
+
+    .navigation__close-button {
+        right: 13px;
+        top: 13px;
+    }
+
+    .navigation__account-button {
+        margin-bottom: 48px;
+    }
+  }

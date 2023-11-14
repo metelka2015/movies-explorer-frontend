@@ -1,0 +1,109 @@
+.techs {
+    background-color: #272727;
+    min-width: 284px;
+    max-height: 567px;
+    padding: 96px 70px 101px;
+}
+
+.techs__title {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    align-self: center;
+    margin: 90px 0 0;
+}
+
+.techs__subtitle {
+    max-width: 460px;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+    align-self: center;
+    text-align: center;
+    margin: 26px 0 0;
+}
+
+.techs__items {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 100px 0 0;
+    padding: 0;
+    align-self: center;
+    list-style-type: none;
+}
+
+.techs__item {
+    width: 90px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;    
+    background-color: #303030;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 768px) {
+    .techs {
+        padding: 86px 50px 90px;
+    }
+
+    .techs__title {
+        margin: 80px 0 0;
+    }
+
+    .techs__subtitle {
+        font-size: 12px;
+        line-height: 18px;        
+        margin: 22px 0 0;
+    }
+
+    .techs__items {
+        margin: 83px 0 0;
+        flex-wrap: wrap;
+    }
+
+    .techs__item {
+        width: 84px;
+        height: 57px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .techs {
+        padding: 70px 18px 70px;
+        max-height: 641px;
+        min-width: 284px;
+    }
+
+    .techs__title {
+        font-size: 30px;
+        line-height: 36px;
+        padding-bottom: 2px;
+        margin: 60px 0 0;
+    }            
+
+    .techs__subtitle {
+        font-size: 11px;
+        line-height: 16px; 
+    }
+
+    .techs__items {
+        margin: 50px 50px 0;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+
+}

@@ -1,0 +1,91 @@
+.page-not-found {
+    background-color: #202020;
+    margin: 0 auto;
+}
+
+.page-not-found__cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+    color: #fff;
+    font-family: "Inter", "Arial", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    background-color: #202020;
+    margin: 0 auto;
+    min-width: 320px;
+}
+
+.page-not-found__title {
+    font-family: "Inter", "Arial", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 140px;    
+    line-height: 169px; 
+    margin: 246px auto 6px;
+}
+
+.page-not-found__subtitle {
+    font-family: "Inter", "Arial", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 16px;
+    line-height: 19px;  
+    margin: 0 auto 184px;
+}
+
+.page-not-found__link {
+    font-family: "Inter", "Arial", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: #4285F4;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 60px;
+    text-decoration: none;    
+}
+
+.page-not-found__link:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+    .page-not-found__title {
+        margin: 406px auto 6px;
+        
+    }
+
+    .page-not-found__subtitle {
+        margin: 0 auto 184px;        
+    }
+
+    .page-not-found__link {
+        margin-bottom: 222px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .page-not-found__title {
+        margin: 328px auto 11px;
+        font-size: 80px;
+        line-height: 97px;
+
+    }
+
+    .page-not-found__subtitle {
+        margin: 0 auto 284px;
+        font-size: 12px;
+        line-height: 15px;  
+        
+    }
+
+    .page-not-found__link {
+        margin-bottom: 30px;
+        font-size: 12px;
+        line-height: 15px;
+
+    }
+}

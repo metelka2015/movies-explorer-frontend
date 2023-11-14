@@ -1,0 +1,70 @@
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 22px 0 67px;
+    margin: 0;
+    height: 40px;
+    gap: 12px;
+}
+
+.filter__input {
+    width: 36px;
+    height: 20px;
+    border-radius: 20px;    
+    background-color: #343434;    
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.filter__input::after {
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 5.56%;
+    right: 50%;
+    top: 10%;
+    bottom: 61%;
+    transition: .3s;    
+}
+
+.filter__input:checked {
+    background-color: #3DDC84;   ;
+}
+
+.filter__input:checked::after {
+    transition: .3s;
+    left: 50%;
+    right: 5.56%;
+}
+
+.filter__text {
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .filter {
+        flex-direction: row-reverse;
+        justify-content: right;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .filter {
+        justify-content: center;
+        padding: 25px 0 42px
+    }
+
+    .filter__text {
+        font-size: 11px;
+    }
+}
