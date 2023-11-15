@@ -1,18 +1,15 @@
 .profile {   
     margin: 0 auto;
     background-color: #202020;    
-}
-
-.profile__cover {
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    max-width: 1280px;
-    margin: 0 auto;
+    max-width: 1280px;    
     padding-top: 74px;
-    color: #fff;
+    color: #fff; 
 }
+
 
 .profile__title {
     font-family: "Inter", "Arial", sans-serif;
@@ -71,7 +68,17 @@
     padding-top: 17px;
     padding-bottom: 17px;
     color: #fff; 
+    transition: .3s;
+    cursor: pointer;
 }
+
+.profile__input:focus {
+outline: 1px solid #8B8B8B;
+}
+
+.profile__input:hover {
+    outline: 1px solid #8B8B8B;
+    }
 
 .profile__error-message {
     font-family: "Inter", "Arial", sans-serif;
@@ -145,12 +152,12 @@
 }
 
 .profile__exit-button-link {
-    margin: 10px auto 70px;
+    margin: 14px auto 70px;
 
 }
 
 @media screen and (max-width: 768px) {
-      .profile__cover {
+      .profile {
         padding-top: 236px;
       }
 
@@ -163,7 +170,7 @@
       }
 
       .profile__exit-button-link {
-        margin: 10px auto 269px;    
+        margin: 13px auto 269px;    
     }
 
     .profile__submit-button {
@@ -176,7 +183,7 @@
 }
 
 @media screen and (max-width: 490px) {
-    .profile__cover {
+    .profile {
         padding-top: 70px;
         min-width: 320px;
         }
@@ -194,7 +201,7 @@
         }
 
     .profile__exit-button-link {
-        margin: 10px auto 40px;    
+        margin: 13px auto 40px;    
     }
 
     .profile__submit-button {
@@ -204,6 +211,11 @@
     .profile__error-message {
         margin-top: 405px;
         max-width: 260px;
+    }
+
+    .profile__exit-button {
+        font-size: 12px;
+        line-height: 15px;
     }
 }
 

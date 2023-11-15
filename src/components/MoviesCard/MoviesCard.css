@@ -9,7 +9,7 @@
 .movie-card__container {
     /*display: flex;
     justify-content: space-between;*/
-    border-radius: 8px;   
+    border-radius: 8px;  
     
 }
 
@@ -19,6 +19,8 @@
     aspect-ratio: 16/9;
     cursor: pointer;
     display: flex;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .movie-card__info {

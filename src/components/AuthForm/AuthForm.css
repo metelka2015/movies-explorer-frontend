@@ -61,7 +61,18 @@
     line-height: 16px; 
     padding: 15px;   
     margin-bottom: 20px;
+    transition: .3s;
+    cursor: pointer;
 }
+
+.authform__input:focus {
+    outline: 1px solid #8B8B8B;
+}
+
+.authform__input:hover {
+    outline: 1px solid #8B8B8B;
+}
+
 
 .authform__error-message {
     font-family: "Inter", "Arial", sans-serif;

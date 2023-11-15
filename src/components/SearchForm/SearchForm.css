@@ -30,7 +30,7 @@
 }
 
 .search-form__input:hover {
-    opacity: .8;
+    outline: 1px solid #8B8B8B;
 }
 .search-form__input:focus {
     outline: 1px solid #8B8B8B;
@@ -56,5 +56,11 @@
         line-height: 22px;
     }
 
-    
+    .search-form__button {        
+        margin-right: 4px;
+    }
+
+    .search-form__container {
+        padding-bottom: 9px;
+    }
 }

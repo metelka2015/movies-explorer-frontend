@@ -13,7 +13,7 @@ export function AuthForm({
     return (
         <div className="authform">
             <Logo />
-            <h2 className="authform__title">{title}</h2>
+            <h1 className="authform__title">{title}</h1>
             <form className="authform__form">
                 <fieldset className="authform__fieldset">
 
@@ -21,12 +21,12 @@ export function AuthForm({
 
                     <label className="authform__label">
                         <span className="authform__input-text">E-mail</span>
-                        <input className="authform__input" type="email" name="email" required></input> 
+                        <input className="authform__input" placeholder="E-mail" type="email" name="email" required></input> 
                         <span className="authform__error-message"></span>
                     </label>
                     <label className="authform__label">
                         <span className="authform__input-text">Пароль</span>
-                        <input className="authform__input" type="password" name="password" required></input> 
+                        <input className="authform__input" placeholder="Пароль" minLength="6" maxLength="30" type="password" name="password" required></input> 
                         <span className="authform__error-message"></span>
                     </label>     
                 </fieldset>

@@ -4,7 +4,7 @@ import './TitleSection.css';
 export function TitleSection ({title, children }) {
     return (
         <div className="section">
-            <h3 className="section__title">{title}</h3>
+            <h2 className="section__title">{title}</h2>
             {children}
         </div>
     );

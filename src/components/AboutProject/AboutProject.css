@@ -12,6 +12,7 @@
     padding: 0;
     display: flex;
     justify-content: space-between;    
+    gap: 20px;
 }
 
 .project__titles {    
@@ -28,7 +29,7 @@
     padding: 0;
 }
 
-.projet__subtitle {
+.project__subtitle {
     font-family: "Inter", "Arial", sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -85,7 +86,7 @@
         padding: 91px 50px 80px;
     }
 
-    .projet__subtitle {
+    .project__subtitle {
         font-size: 12px;
         line-height: 18px;
         text-align: left;
@@ -120,7 +121,7 @@
         padding: 70px 18px 60px;
     }
     .project__titles {
-        max-width: 284px;
+        max-width: 530px;
     }
 
     .project__titles:last-of-type {    
@@ -134,7 +135,7 @@
         display: block;  
     }
 
-    .projet__subtitle {
+    .project__subtitle {
         font-size: 11px;
         line-height: 16px;
         margin: 0 0 56px;

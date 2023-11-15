@@ -27,7 +27,7 @@ export function Header() {
                         <NavLink to="/saved-movies" className={handleMenuLinkActive}>Сохранённые фильмы</NavLink>
                     </div>
                     <NavLink to="/profile" className="header__profile-link">Аккаунт <img className={`header__profile-icon ${location.pathname === "/" ? "" : "header__profile-icon_dark"}`} src={account} alt="иконка аккаунта" /></NavLink>
-                    <button className="header__button-burger" onClick={closeMenu}></button>
+                    <button type="button" className="header__button-burger" onClick={closeMenu}></button>
                     <Navigation onClick={closeMenu} menuOpen={menuOpen}/>
                 </>
                 :

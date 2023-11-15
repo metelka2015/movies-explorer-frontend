@@ -25,12 +25,26 @@
     
 }
 
+@media screen and (max-width: 630px) {
+    .movies-cardlist {
+        margin-top: 48px;
+    }
+    .movies-cardlist__container {
+        gap: 36px 30px;
+        justify-content: center;
+        width: 70%;
+    }
+    
+}
+
 @media screen and (max-width: 450px) {
     .movies-cardlist {
         margin-top: 40px;
+        width: 100%;
     }
 
     .movies-cardlist__container {
         gap: 20px;
+        width: 100%;
     }
 }

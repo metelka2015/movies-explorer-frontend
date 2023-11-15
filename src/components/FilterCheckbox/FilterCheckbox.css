@@ -17,6 +17,11 @@
     appearance: none;
     cursor: pointer;
     margin: 0;
+    transition: .3s;
+}
+
+.filter__input:hover {
+    opacity: .8;
 }
 
 .filter__input::after {
@@ -55,13 +60,16 @@
     .filter {
         flex-direction: row-reverse;
         justify-content: right;
-    }
+        padding: 20px 0 67px;
+        gap: 15px;
+     }
 }
+
 
 @media screen and (max-width: 450px) {
     .filter {
         justify-content: center;
-        padding: 25px 0 42px
+        padding: 28px 0 42px
     }
 
     .filter__text {

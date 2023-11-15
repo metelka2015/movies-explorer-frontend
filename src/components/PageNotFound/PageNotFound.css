@@ -1,9 +1,6 @@
 .page-not-found {
     background-color: #202020;
-    margin: 0 auto;
-}
-
-.page-not-found__cover {
+    margin: 0 auto; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,9 +8,7 @@
     color: #fff;
     font-family: "Inter", "Arial", sans-serif;
     font-weight: 400;
-    text-align: center;
-    background-color: #202020;
-    margin: 0 auto;
+    text-align: center;  
     min-width: 320px;
 }
 

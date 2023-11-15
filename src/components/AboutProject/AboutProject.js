@@ -9,11 +9,11 @@ export function AboutProject () {
                 <ul className="project__container">
                     <li className="project__titles">
                         <h3 className="project__title">Дипломный проект включал 5 этапов</h3>
-                        <p className="projet__subtitle">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
+                        <p className="project__subtitle">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
                     </li>
                     <li className="project__titles">
                         <h3 className="project__title">На выполнение диплома ушло 5 недель</h3>
-                        <p className="projet__subtitle">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+                        <p className="project__subtitle">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
                     </li>
                 </ul>
                 <ul className="project__diagram">
