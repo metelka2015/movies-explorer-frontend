@@ -16,7 +16,7 @@ function App() {
   const location = useLocation();  
 
   return (
-    <div className="app__page">
+    <div className="app">
       {location.pathname === '/' || location.pathname === '/saved-movies' || location.pathname === '/movies' || location.pathname === '/profile' ? (<Header />) : ('')}
           <main>
               <Routes>
