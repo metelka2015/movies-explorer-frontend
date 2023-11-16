@@ -1,0 +1,25 @@
+.saved-movies {
+    min-width: 320px;
+    background-color: #202020;  
+    max-width: 1280px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin: 0 auto; 
+    padding: 70px 70px 177px;
+}
+
+@media screen and (max-width: 768px) {
+    .saved-movies {
+        padding: 80px 30px 202px;
+    }    
+}
+
+@media screen and (max-width: 450px) {
+    .saved-movies {
+        min-width: 320px;
+        min-height: 166px;
+        padding: 84px 10px 0;
+    }
+
+}

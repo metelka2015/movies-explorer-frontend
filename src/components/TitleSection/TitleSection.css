@@ -1,0 +1,30 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-width: 1140px;
+    min-width: 284px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.section__title {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    border-bottom: 1px solid #DADADA;
+    padding-bottom: 23px;
+    margin: 0;
+}
+
+@media screen and (max-width: 550px) {
+    .section__title {
+        font-family: "Inter", "Arial", sans-serif;
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 1px;
+        padding-bottom: 27px;    
+    }     
+}

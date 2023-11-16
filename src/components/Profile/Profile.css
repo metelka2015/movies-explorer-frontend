@@ -1,0 +1,221 @@
+.profile {   
+    margin: 0 auto;
+    background-color: #202020;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 1280px;    
+    padding-top: 74px;
+    color: #fff; 
+}
+
+
+.profile__title {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;    
+    margin: 0 0 123px;
+}
+
+.profile__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+.profile__fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-top: -17px;
+    padding: 0;   
+}
+
+.profile__label {
+    border-bottom: 1px solid #424242;
+    position: relative;
+    width: 410px;
+    display: flex;
+}
+
+.profile__label:last-of-type {
+    border-bottom: none;
+}
+
+.profile__input-text {
+    font-family: "Inter", "Arial", sans-serif;
+    font-family: Inter;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    position: absolute;
+    align-self: center;
+}
+
+.profile__input {
+    border: none; 
+    background-color: #202020;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: right;
+    width: 100%;
+    outline: none;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    color: #fff; 
+    transition: .3s;
+    cursor: pointer;
+}
+
+.profile__input:focus {
+outline: 1px solid #8B8B8B;
+}
+
+.profile__input:hover {
+    outline: 1px solid #8B8B8B;
+    }
+
+.profile__error-message {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    text-align: center;
+    color: #EE3465;
+    margin-top: 250px;
+    position: absolute;
+}
+
+.profile__submit-button {
+    background-color: #4285F4;
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: center;
+    cursor: pointer;
+    margin: 203px auto 70px;
+    transition: .3s;
+}
+
+.profile__submit-button:hover {
+    opacity: .8;
+}
+
+.profile__submit-button_disabled {
+    background-color: #343434;
+    color: #A0A0A0;
+}
+
+.profile__button {
+    border: none;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    background-color: #202020;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s linear;
+    margin-top: 203px;   
+}
+
+.profile__button:hover {
+    opacity: .7;
+}
+
+.profile__exit-button {
+    color: #EE3465;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.profile__exit-button:hover {
+    opacity: .7;
+}
+
+.profile__exit-button-link {
+    margin: 14px auto 70px;
+
+}
+
+@media screen and (max-width: 768px) {
+      .profile {
+        padding-top: 236px;
+      }
+
+      .profile__title {
+        margin: 0 0 96px;
+      }
+
+      .profile__button {
+        margin-top: 194px;
+      }
+
+      .profile__exit-button-link {
+        margin: 13px auto 269px;    
+    }
+
+    .profile__submit-button {
+        margin: 194px auto 269px;
+    }
+
+    .profile__error-message {
+        margin-top: 239px;
+    }      
+}
+
+@media screen and (max-width: 490px) {
+    .profile {
+        padding-top: 70px;
+        min-width: 320px;
+        }
+
+    .profile__title {
+        margin: 0 0 80px;
+        }
+
+    .profile__label {
+        width: 260px;
+        }
+
+    .profile__button {
+        margin-top: 360px;
+        }
+
+    .profile__exit-button-link {
+        margin: 13px auto 40px;    
+    }
+
+    .profile__submit-button {
+        margin: 360px auto 40px;
+    }
+
+    .profile__error-message {
+        margin-top: 405px;
+        max-width: 260px;
+    }
+
+    .profile__exit-button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
