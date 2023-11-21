@@ -1,5 +1,6 @@
 .movies-cardlist {
-    margin-top: 41px;
+    margin: 41px 0 78px;
+    text-align: center;
 }
 
 .movies-cardlist__container {
@@ -14,9 +15,18 @@
 
 }
 
+.movies-cardlist__error {
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #fff;
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     .movies-cardlist {
-        margin-top: 48px;
+        margin: 48px 0 82px;
     }
     .movies-cardlist__container {
         gap: 36px 30px;
@@ -26,11 +36,7 @@
 }
 
 @media screen and (max-width: 630px) {
-    .movies-cardlist {
-        margin-top: 48px;
-    }
     .movies-cardlist__container {
-        gap: 36px 30px;
         justify-content: center;
         width: 70%;
     }
@@ -39,7 +45,7 @@
 
 @media screen and (max-width: 450px) {
     .movies-cardlist {
-        margin-top: 40px;
+        margin: 40px 0 82px;;
         width: 100%;
     }
 

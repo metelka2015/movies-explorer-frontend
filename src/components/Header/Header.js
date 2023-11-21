@@ -5,7 +5,7 @@ import logo from "../../images/logo.svg";
 import './Header.css';
 import account from "../../images/icon-account.svg";
 
-export function Header() {
+export function Header({loggedIn}) {
     const location = useLocation();
     const [ menuOpen, setMenuOpen ] = React.useState(false);
     function closeMenu() {
@@ -14,7 +14,7 @@ export function Header() {
     function handleMenuLinkActive({isActive}) {
         return `header__link ${isActive ? "header__link_active" : ""}`;
     }
-    let loggedIn = true;
+    
   return (
     <header className={`header header_theme_${location.pathname === "/" ? "blue" : "dark"}`}>
         <div className="header__cover">

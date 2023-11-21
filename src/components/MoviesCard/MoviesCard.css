@@ -3,14 +3,13 @@
     box-shadow: 0px 16px 24px 0px rgba(0, 0, 0, 0.05);
     list-style-type: none;
     border-radius: 8px;
+    min-width: 270px;
     max-width: 400px;
 }
 
 .movie-card__container {
-    /*display: flex;
-    justify-content: space-between;*/
     border-radius: 8px;  
-    
+    text-align: left;    
 }
 
 .movie-card__image {
@@ -25,7 +24,6 @@
 
 .movie-card__info {
     display: flex;
-    /*flex-direction: column;*/
     margin: 14px 12px 0;
     justify-content: space-between;
     align-items: start;
@@ -86,4 +84,22 @@
 
 .movie-card__button_save:hover {
     opacity: .8;
+}
+
+.movie-card__delete-button {
+    background-image: url('../../images/delete-button.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: .3s;
+    border: none;
+    border-radius: 50px;
+    background-color: #222;
+}
+
+.movie-card__delete-button:hover {
+    background-color: #A0A0A0;
 }

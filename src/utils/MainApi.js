@@ -1,6 +1,6 @@
-/*export const BASE_URL = "https://api.metelka.nomoredomainsrocks.ru";*/
+export const BASE_URL = "https://api.movie.metelka.nomoredomainsrocks.ru"; 
 
-export const BASE_URL = "http://localhost:3001";
+/*export const BASE_URL = "http://localhost:3000";*/
 
 
 function checkRes(res) {
