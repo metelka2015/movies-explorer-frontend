@@ -73,7 +73,7 @@ export function AuthForm({
                         type="text" 
                         name="email" 
                         required 
-                        pattern="^[a-zA-Z0-9\.\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z0-9]+$" 
+                        pattern="^([a-zA-Z0-9\.\-]{1,})@([a-zA-Z0-9\.\-]{1,})\.([a-zA-Z0-9]{2,})$" 
                         value={values.email || ""}
                         onChange={handleChange}
                         
