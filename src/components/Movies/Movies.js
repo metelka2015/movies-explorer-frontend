@@ -60,7 +60,7 @@ export function Movies ({ savedMovies, handleDeleteMovie, onSaveMovie, onSearch,
       }
 
       React.useEffect(() => {
-        numberCards()
+        numberCards(window.screen.width);
       }, [])
 
     return(

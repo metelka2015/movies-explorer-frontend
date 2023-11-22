@@ -9,7 +9,6 @@ const UPDATE_SUCCESS = 'Профиль успешно обновлён.';
 const SERVER_ERR = 'На сервере произошла ошибка.';
 const LOADING_ERR = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.';
 
-const REG_EMAIL = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-].[a-zA-Z0-9-.]+$/
 
 const CARDS_NUMBERS_DESKTOP = 4;
 const CARDS_NUMBERS_TABLET_lARGE = 3;
@@ -32,6 +31,5 @@ module.exports = {
   CARDS_NUMBERS_TABLET_lARGE,
   CARDS_NUMBERS_TABLET_SMALL,
   CARDS_NUMBERS_MOBILE,
-  REG_EMAIL,
   DURATION,
 }

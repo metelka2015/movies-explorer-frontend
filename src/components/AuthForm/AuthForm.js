@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import './AuthForm.css';
 import { Logo } from '../Logo/Logo.js';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation.js';
-import { REG_EMAIL } from '../../utils/constants.js';
 
 export function AuthForm({
     title,
@@ -73,10 +72,11 @@ export function AuthForm({
                         placeholder="E-mail" 
                         type="email" 
                         name="email" 
-                        required
+                        required 
+                        pattern="^[a-zA-Z0-9\.\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z0-9]+$"
                         value={values.email || ""}
                         onChange={handleChange}
-                        pattern={REG_EMAIL}
+                        
                         ></input> 
                         <span className={`authform__error-message ${errors.email && "authform__error-message_active"}`}>{errors.email || ""}</span>
                     </label>
