@@ -19,15 +19,15 @@ import * as PopupMessage from '../../utils/constants.js';
 import { searchAllMovies, filterShortMovies} from '../../utils/movieFilter.js';
 import { Preloader } from "../Preloader/Preloader.js";
 
-  
 
 function App() {
   const location = useLocation();  
   const [currentUser, setCurrentUser] = React.useState({});
   const [loggedIn, setLoggedIn] = React.useState(false);
+  console.log(loggedIn);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [isLoginIn, setIsLoginIn] = React.useState(false);
- 
+  const [isAppReady, setIsAppReady ] = React.useState(true);
+   
   const navigate = useNavigate();
   const [ errorMessage, setErrorMessage ] = React.useState({type: 'default', message: ''});
   
@@ -45,33 +45,32 @@ function App() {
 
   const checkToken = React.useCallback(() => {
     const token = localStorage.getItem("token");
-    if (token) {
+    
+    if (token) { 
+        setIsAppReady(true);   
       mainApi
         .checkToken(token)
         .then((res) => {
           setLoggedIn(true);
-          /*navigate("/movies", { replace: true });*/
+          
         })
         .catch((error) => {
           localStorage.removeItem("token");          
-          /*navigate("/signup", { replace: true });*/
+          navigate("/signup", { replace: true });
           setLoggedIn(false);
-          console.log(error);
+          console.log(error);         
         })
         .finally(() => {
-          setIsLoginIn(false);
+           setIsAppReady(false); 
         })
     } else {
-      setIsLoginIn(false);
+      setIsAppReady(false)
     }
   }, [])
 
- /* React.useEffect(() => {
-      checkToken();
-    }, []);  */
   
-  React.useEffect(() => {
-    checkToken();
+  React.useEffect(() => {  
+    checkToken(); 
     const token = localStorage.getItem('token');
     loggedIn &&
       Promise.all([mainApi.getUserInfo(token), mainApi.getSavedMovies(token)])
@@ -81,11 +80,42 @@ function App() {
         })
         .catch(console.error)  
         .finally(() => {
-          setIsLoginIn(false);
-        })      
+          setIsAppReady(false);
+        })
+             
   }, [loggedIn])
 
-  
+   function handleLogin({email, password}) {    
+    setIsLoading(true);
+    mainApi
+      .login(email, password)
+      .then((res) => {
+          localStorage.setItem("token", res.token);
+          setLoggedIn(true);
+          setIsSuccess(true);
+          navigate("/movies", { replace: true });
+        })
+      .catch((error) => {
+        if (error === 'Ошибка: 401') {
+          setIsSuccess(false);
+          setInfoMessage(PopupMessage.LOGIN_ERR_UNAUTHORIZED);
+          setIsInfoTooltipOpen(true);
+        } else if (error === 'Ошибка: 409') {
+            setIsSuccess(false);
+            setIsInfoTooltipOpen(true);
+            setInfoMessage(PopupMessage.CONFLICT_ERR); 
+        } else {
+          setIsSuccess(false);
+          setInfoMessage(PopupMessage.SERVER_ERR);
+          setIsInfoTooltipOpen(true);     
+        }
+        console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
+  }
+
 
   function searchMovie(request) {
     localStorage.setItem('searchMovies', request);
@@ -95,9 +125,11 @@ function App() {
         const allMovies = JSON.parse(localStorage.getItem('movies'));
         searchFilter(allMovies, request, checkboxStatus); 
     } else {  
-        setIsLoading(true)
+        const token = localStorage.getItem('token');
+        if (loggedIn) {
+          setIsLoading(true)
         moviesApi
-        .getMovies()
+        .getMovies(token)
         .then((res) => {
         localStorage.setItem('movies', JSON.stringify(res));
             searchFilter(res, request, checkboxStatus);
@@ -120,6 +152,8 @@ function App() {
         .finally(() => {
             setIsLoading(false);
         })
+        }
+        
     }
   }
 
@@ -164,7 +198,8 @@ function App() {
 
   function saveMovie(movie) {
     const token = localStorage.getItem('token');
-    mainApi.saveMovie(
+    if (loggedIn) {
+      mainApi.saveMovie(
       {
         country: movie.country,
         director: movie.director,
@@ -183,6 +218,8 @@ function App() {
         setSavedMovies([res, ...savedMovies]);
       })
       .catch(console.error);
+    }
+    
   }
 
   function handleDeleteMovie(movie) {
@@ -234,37 +271,7 @@ function App() {
       })
   }
 
-  function handleLogin({email, password}) {
-    setIsLoading(true);
-    mainApi
-      .login(email, password)
-      .then((res) => {
-          localStorage.setItem("token", res.token);
-          setLoggedIn(true);
-          setIsSuccess(true);
-          navigate("/movies", { replace: true });
-        })
-      .catch((error) => {
-        if (error === 'Ошибка: 401') {
-          setIsSuccess(false);
-          setInfoMessage(PopupMessage.LOGIN_ERR_UNAUTHORIZED);
-          setIsInfoTooltipOpen(true);
-        } else if (error === 'Ошибка: 409') {
-            setIsSuccess(false);
-            setIsInfoTooltipOpen(true);
-            setInfoMessage(PopupMessage.CONFLICT_ERR); 
-        } else {
-          setIsSuccess(false);
-          setInfoMessage(PopupMessage.SERVER_ERR);
-          setIsInfoTooltipOpen(true);     
-        }
-        console.log(error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      })
-  }
-
+ 
   function handleUpdateUser(data) {
     const token = localStorage.getItem('token');
     
@@ -314,19 +321,22 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      { isLoginIn && <Preloader /> }
-     { !isLoginIn ? 
+      { isAppReady   && <Preloader /> } 
+      { !isAppReady ? 
+     
         <div className={location.pathname === '/saved-movies' || location.pathname === '/movies' ? "app app__align" : "app"} >
         {location.pathname === '/' || location.pathname === '/saved-movies' || location.pathname === '/movies' || location.pathname === '/profile' ? (<Header loggedIn={loggedIn}/>) : ('')}
-            <main>              
+            <main> 
+                          
                 <Routes>
                     <Route path="/" element={<Main loggedIn={loggedIn}/>} />
+                    
                     <Route path="/movies" element={
                       <ProtectedRoute 
                         element={Movies} 
                         loggedIn={loggedIn}
                         isLoading={isLoading} 
-                        handleDeleteMovie={handleDeleteMovie} 
+                        handleDeleteMovie={handleDeleteMovie}                         
                         onSaveMovie={saveMovie} 
                         savedMovies={savedMovies} 
                         onSearch={searchMovie}
@@ -374,7 +384,7 @@ function App() {
                 </Routes> 
             </main>
         {location.pathname === '/' || location.pathname === '/saved-movies' || location.pathname === '/movies' ? (<Footer />) : ('')}        
-      </div> : '' }
+      </div> : ""}
       <InfoTooltip className={!isInfoTooltipOpen ? 'popup' : 'popup popup_opened'} 
           isSuccess={isSuccess}
           onClose={closePopup}
