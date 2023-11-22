@@ -6,14 +6,6 @@
    padding-top: 75px;
 }
 
-/*.promo__cover {
-    max-width: 1280px;
-    min-height: 499px;
-    margin: 0 auto;   
-    padding-top: 75px;
-    background-color: #073042;
- }*/
-
 .promo__container {
     display: flex;
     justify-content: space-between;
@@ -153,6 +145,4 @@
     .promo__link {
         margin: 48px 0 28px;
     }
-
-
 }
