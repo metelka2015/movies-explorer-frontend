@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import './AuthForm.css';
 import { Logo } from '../Logo/Logo.js';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation.js';
-import validator from 'validator';
 
 export function AuthForm({
     title,
