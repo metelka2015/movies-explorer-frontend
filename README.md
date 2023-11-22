@@ -2,3 +2,5 @@
 
 ## Фронтенд проекта Movies: https://movie.metelka.nomoredomainsrocks.ru
 ## Бэкенд: https://api.movie.metelka.nomoredomainsrocks.ru
+
+## Pull request: https://github.com/metelka2015/movies-explorer-frontend/pull/2#issue-2005703226
